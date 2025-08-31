@@ -1,4 +1,4 @@
-![Angular Starter Banner](https://user-images.githubusercontent.com/7531596/128626297-df86020b-1cdc-43b5-a692-6c4c45534ec1.png)
+![Grow Timer Banner](https://user-images.githubusercontent.com/7531596/128626297-df86020b-1cdc-43b5-a692-6c4c45534ec1.png)
 
 **Kickstart your next enterprise-grade Angular project with this robust, feature-rich starter template.**  
 Designed to save you time and effort, this boilerplate provides everything you need to build scalable, maintainable, and high-quality Angular applications.
