@@ -1,19 +1,26 @@
 import { Subscription, interval } from 'rxjs';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, input } from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    // styleUrl: './app.component.scss'
+    styleUrl: './app.component.scss',
+    imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule],
+    template: ` Countdown Min: {{countdownMin}} `
 })
 export class AppComponent implements OnInit, OnDestroy {
  private subscription: Subscription;
 
-  public countdownMin = 25; // TODO: take as input
+  public countdownMin = input(25);
   public dateNow = new Date();
   private currentTime = this.dateNow.getTime();
-  private minutesToAdd = this.countdownMin * 10000;
-  public countdownTime = new Date(this.currentTime + this.minutesToAdd);
+  public minutesToAdd = this.countdownMin() * 60 * 1000; // Number(this.countdownMIn)
+  private countdownTime = new Date(this.currentTime + this.minutesToAdd);
 
   milliSecondsInASecond = 1000;
   hoursInADay = 24;

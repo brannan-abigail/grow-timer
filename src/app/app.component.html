@@ -2,8 +2,11 @@
 
 <main>
   <div>
-    <h1>Current date and time: {{dateNow}}</h1>
-    <h1>Countdown date and time: {{countdownTime}}</h1>
+    <mat-form-field class="example-form-field">
+      <mat-label>Clearable input</mat-label>
+      <input matInput type="number" [(ngModel)]="countdownMin">
+    </mat-form-field>
+
     <h2>{{hoursToCountdownTime}}:{{minutesToCountdownTime}}:{{secondsToCountdownTime}}</h2>
   </div>
 </main>
