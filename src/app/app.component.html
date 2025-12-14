@@ -1,12 +1,27 @@
-
-
 <main>
   <div>
-    <mat-form-field class="example-form-field">
-      <mat-label>Clearable input</mat-label>
-      <input matInput type="number" [(ngModel)]="countdownMin">
-    </mat-form-field>
+    <div *ngIf="editMode">
+      <div style="display:flex; gap:12px; align-items:end;">
+        <mat-form-field class="example-form-field">
+          <mat-label>Hours</mat-label>
+          <input matInput type="number" min="0" [(ngModel)]="countdownHours" (ngModelChange)="updateCountdownTime()">
+        </mat-form-field>
 
+        <mat-form-field class="example-form-field">
+          <mat-label>Minutes</mat-label>
+          <input matInput type="number" min="0" max="59" [(ngModel)]="countdownMinutes" (ngModelChange)="updateCountdownTime()">
+        </mat-form-field>
+
+        <mat-form-field class="example-form-field">
+          <mat-label>Seconds</mat-label>
+          <input matInput type="number" min="0" max="59" [(ngModel)]="countdownSeconds" (ngModelChange)="updateCountdownTime()">
+        </mat-form-field>
+      </div>
+    </div>
     <h2>{{hoursToCountdownTime}}:{{minutesToCountdownTime}}:{{secondsToCountdownTime}}</h2>
+    <div style="margin-top: 16px;">
+      <button mat-raised-button color="primary" (click)="onEditClick()">Edit</button>
+      <button *ngIf="editMode" mat-stroked-button color="warn" (click)="onCancelEdit()">Cancel</button>
+    </div>
   </div>
 </main>
