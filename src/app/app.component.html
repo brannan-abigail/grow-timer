@@ -1,6 +1,14 @@
 <main>
   <div>
-    <h1>Focus</h1>
-    <app-grow-timer></app-grow-timer>
+    <!-- <div> Growing: {{ selectedPlot() }}</div>
+
+    <mat-form-field appearance="fill" style="min-width: 200px; margin-bottom: 0;">
+      <mat-label>Select Plot</mat-label>
+      <mat-select [value]="selectedPlot()" (selectionChange)="onSelectPlot($event.value)">
+        <mat-option *ngFor="let plot of plots" [value]="plot">{{ plot }}</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <app-grow-timer style="margin-top: 8px;"></app-grow-timer>
   </div>
 </main>

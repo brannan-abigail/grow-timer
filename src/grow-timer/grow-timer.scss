@@ -1,9 +1,71 @@
+/* Theme containers for focus and rest modes */
+.timer-theme-container {
+  border-radius: 24px;
+  padding: 24px 0 24px 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.focus-theme {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.focus-theme h2,
+.focus-theme .mode-label,
+.focus-theme mat-label,
+.focus-theme input,
+.focus-theme .mat-form-field-label {
+  color: #1b5e20 !important;
+}
+
+.rest-theme {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.rest-theme h2,
+.rest-theme .mode-label,
+.rest-theme mat-label,
+.rest-theme input,
+.rest-theme .mat-form-field-label {
+  color: #0d47a1 !important;
+}
+
+.mode-label {
+  text-align: center;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+/* Add blue background for rest mode */
+.rest-mode {
+  background: #e3f2fd;
+  border-radius: 24px;
+  padding: 16px 0;
+  transition: background 0.3s;
+}
+
 :host {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%);
+  background: #fff;
+  transition: background 0.4s;
+}
+
+:host.focus-host {
+  /* No background override, keep white */
+}
+
+:host.rest-host {
+  /* No background override, keep white */
 }
 
 timer-container {
